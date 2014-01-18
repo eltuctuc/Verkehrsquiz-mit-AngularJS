@@ -52,7 +52,7 @@ App.run([
 			}
 			
 			var quiz = QuizStorage.load();
-			if (loadUpdate) {
+			if (!quiz || loadUpdate) {
 				loadJSON.get('quiz.json', function (data) {
 					//$log.log(data);
 					

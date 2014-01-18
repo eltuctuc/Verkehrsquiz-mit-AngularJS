@@ -13,6 +13,8 @@ App.Controllers.controller('MainCtrl', [
 		$scope.quiz = QuizStorage.load();
 		$scope.result = 'panel-default';
 		$scope.choose = null;
+		$scope.isAnswer =false;
+		$scope.answerSvg = null;
 		
 		$scope.getChoose = function () {
 			//$log.log($scope.quiz);
@@ -27,20 +29,31 @@ App.Controllers.controller('MainCtrl', [
 		};
 		
 		$scope.getChoose();
+		$scope.isDisabled = false;
 		
 		$scope.checkAnswer = function (val) {
+			
+			$scope.isDisabled = true;
+			$scope.isAnswer = true;
+			
 			if(val == $scope.choose.solution) {
+				$scope.answerSvg = 'right.svg';
 				$scope.result = 'panel-success';
 			} else {
+				$scope.answerSvg = 'wrong.svg';
 				$scope.result = 'panel-danger';
 			}
 			
 			$timeout(function () {
 				$scope.getChoose();
-			}, 2000);
+				$scope.isDisabled = false;
+				$scope.isAnswer = false;
+				$scope.answerSvg = null;
+			}, 5000);
 		};
 		
 		$scope.clickRandom = function () {
+			
 			$scope.getChoose();
 		};
 	}
