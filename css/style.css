@@ -7,19 +7,61 @@ and open the template in the editor.
     Created on : 13.01.2014, 15:52:06
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 */
-/* line 10, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\public_html\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/public_html\/less\/style\.less}line{font-family:\0000310}}
+/* line 10, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000310}}
 body {
   font-family: Arial, sans-serif;
 }
-/* line 14, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\public_html\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/public_html\/less\/style\.less}line{font-family:\0000314}}
+/* line 14, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000314}}
 .quiz-question {
+  position: relative;
   text-align: center;
   font-size: 3em;
+  min-height: 2.8em;
 }
-/* line 18, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\public_html\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/public_html\/less\/style\.less}line{font-family:\0000318}}
+/* line 21, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000321}}
+.answer-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 26, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000326}}
 .quiz-button {
   font-size: 3em;
+}
+/* line 30, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000330}}
+.quiz-number {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+}
+/* line 36, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000336}}
+.min-height {
+  position: relative;
+  height: 25em;
+  overflow: hidden;
+}
+/*************************************************************************/
+/* line 43, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000343}}
+.panel-danger > .panel-heading {
+  color: white;
+  background-image: -webkit-linear-gradient(top, #a84747 0%, #4e0e0e 100%);
+  background-image: linear-gradient(to bottom, #a84747 0%, #4e0e0e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A84747', endColorstr='#4E0E0E', GradientType=0);
+}
+/* line 52, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000352}}
+.panel-success > .panel-heading {
+  color: white;
+  background-image: -webkit-linear-gradient(top, #5b8f46 0%, #1f4111 100%);
+  background-image: linear-gradient(to bottom, #5b8f46 0%, #1f4111 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5B8F46', endColorstr='#1F4111', GradientType=0);
 }
