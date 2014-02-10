@@ -6,55 +6,155 @@ App.Controllers = angular.module('App.Controllers', []);
  * MainCtrl
  */
 App.Controllers.controller('MainCtrl', [
-	'$scope', '$log', '$timeout', 'QuizStorage',
-	function($scope, $log, $timeout, QuizStorage) {
+	'$scope', '$log', '$timeout', '$location',
+	function($scope, $log, $timeout, $location) {
+		$log.log('Main started');
+		
+		$scope.gotoQuiz = function () {
+			$location.path('/quiz');
+		};
+	}
+]);
+
+
+/**
+ * QuizCtrl
+ */
+App.Controllers.controller('QuizCtrl', [
+	'$scope', '$log', '$timeout', '$location', 'QuizStorage', 'QuizResult',
+	function($scope, $log, $timeout, $location, QuizStorage, QuizResult) {
 		$log.log('Quiz started');
 		
-		$scope.quiz = QuizStorage.load();
-		$scope.result = 'panel-default';
 		$scope.choose = null;
-		$scope.isAnswer =false;
-		$scope.answerSvg = null;
+		$scope.currentQuestion = 0;
+		$scope.totalQuestion = 0;
+		$scope.percentQuestion = 0;
+		
+		$scope.init = function () {
+			QuizResult.clear();
+			
+			$scope.choose = null;
+			$scope.currentQuestion = 0;
+			$scope.percentQuestion = 0;
+			
+			$scope.quiz = QuizStorage.load();
+			$scope.totalQuestion =	$scope.quiz.length;
+			$scope.overlayView = false;
+			$scope.overlayColor = null;
+			
+			$scope.getChoose();
+		},
 		
 		$scope.getChoose = function () {
-			//$log.log($scope.quiz);
 			var rnd = Math.floor(Math.random() * $scope.quiz.length);
 			
-			//$log.log(rnd);
-			
 			$scope.choose = $scope.quiz[rnd];
-			//$log.log($scope.choose);
 			
-			$scope.result = 'panel-default';
+			$scope.quiz.splice(rnd,1);
+			$scope.currentQuestion = ($scope.totalQuestion) - $scope.quiz.length;
+			$scope.percentQuestion = $scope.currentQuestion * 100 / $scope.totalQuestion;
+			$log.log($scope.currentQuestion, $scope.totalQuestion, $scope.quiz.length);
+			
+			$scope.overlayView = false;
 		};
 		
-		$scope.getChoose();
-		$scope.isDisabled = false;
+		$scope.getTotalAnswer = function () {
+			return $scope.totalQuestion;
+		};
+		
+		$scope.getRightAnswer = function () {
+			var value = 0;
+			
+			return value;
+		};
+		
+		$scope.init();
+		
 		
 		$scope.checkAnswer = function (val) {
 			
-			$scope.isDisabled = true;
-			$scope.isAnswer = true;
+			$scope.overlayView = true;
 			
 			if(val == $scope.choose.solution) {
-				$scope.answerSvg = 'right.svg';
-				$scope.result = 'panel-success';
+				$scope.choose.answer = true;
+				$scope.overlayColor = 'overlayTrue';
 			} else {
-				$scope.answerSvg = 'wrong.svg';
-				$scope.result = 'panel-danger';
+				$scope.choose.answer = false;
+				$scope.overlayColor = 'overlayFalse';
 			}
+			QuizResult.add($scope.choose);
 			
 			$timeout(function () {
-				$scope.getChoose();
-				$scope.isDisabled = false;
-				$scope.isAnswer = false;
-				$scope.answerSvg = null;
-			}, 5000);
+				if($scope.quiz.length === 0) {
+					$location.path('/result');
+				} else {
+					$scope.getChoose();
+				}
+			}, 1000);
+		};
+		
+		$scope.reload = function () {
+			$scope.init();
+		};
+		
+		$scope.gotoStart = function () {
+			$location.path('/');
 		};
 		
 		$scope.clickRandom = function () {
 			
 			$scope.getChoose();
+		};
+	}
+]);
+
+
+/**
+ * ResultCtrl
+ */
+App.Controllers.controller('ResultCtrl', [
+	'$scope', '$log', '$location', 'QuizResult',
+	function($scope, $log, $location, QuizResult) {
+		$log.log('Result started');
+		
+		$scope.results = QuizResult.get();
+		
+		if($scope.results.length === 0) {
+			$location.path('/quiz');
+		}
+		
+		$log.log($scope.results);
+		
+		$scope.getColor = function (answer) {
+			if(answer)
+				return 'list-group-item-success';
+			
+			return 'list-group-item-danger';
+		};
+		
+		$scope.getTotalAnswer = function () {
+			return $scope.results.length;
+		};
+		
+		$scope.getRightAnswer = function () {
+			var value = 0;
+			var resultLength = $scope.results.length;
+			for(var i=0; i<resultLength; i++) {
+				$log.log($scope.results[i]);
+				if ($scope.results[i].answer) {
+					value++;
+				}
+			}
+			
+			return value;
+		};
+		
+		$scope.gotoMain = function () {
+			$location.path('/');
+		};
+		
+		$scope.gotoQuiz = function () {
+			$location.path('/quiz');
 		};
 	}
 ]);

@@ -7,48 +7,67 @@ and open the template in the editor.
     Created on : 13.01.2014, 15:52:06
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 */
-/* line 10, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000310}}
+/* line 10, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000310}}
 body {
+  margin-top: 2em;
   font-family: Arial, sans-serif;
+  background-color: #abb3c6;
 }
-/* line 14, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000314}}
+/* line 17, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000317}}
+.panel .panel-body {
+  position: relative;
+}
+/* line 23, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000323}}
 .quiz-question {
   position: relative;
   text-align: center;
   font-size: 3em;
   min-height: 2.8em;
 }
-/* line 21, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000321}}
-.answer-icon {
-  position: absolute;
-  right: 0;
-  top: 0;
+/* line 30, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000330}}
+.btn-size {
+  font-size: 2em;
 }
-/* line 26, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000326}}
-.quiz-button {
-  font-size: 3em;
-}
-/* line 30, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000330}}
+/* line 34, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000334}}
 .quiz-number {
   position: absolute;
   bottom: 0.5em;
   left: 0.5em;
 }
-/* line 36, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000336}}
-.min-height {
-  position: relative;
-  height: 25em;
-  overflow: hidden;
+/*.min-height {
+	position: relative;
+	height: 25em;
+	overflow: hidden;
+}*/
+/*************************************************************************/
+/* line 47, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000347}}
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+}
+/* line 52, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000352}}
+.overlay.overlayTrue {
+  background: #39ad1f;
+}
+/* line 55, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000355}}
+.overlay.overlayFalse {
+  background: #ad1f2f;
 }
 /*************************************************************************/
-/* line 43, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000343}}
+/* line 61, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000361}}
 .panel-danger > .panel-heading {
   color: white;
   background-image: -webkit-linear-gradient(top, #a84747 0%, #4e0e0e 100%);
@@ -56,8 +75,8 @@ body {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A84747', endColorstr='#4E0E0E', GradientType=0);
 }
-/* line 52, D:\Dropbox\Bachelor Arbeit\HTML\AngularJS Quiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Dropbox\/Bachelor Arbeit\/HTML\/AngularJS Quiz\/less\/style\.less}line{font-family:\0000352}}
+/* line 70, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000370}}
 .panel-success > .panel-heading {
   color: white;
   background-image: -webkit-linear-gradient(top, #5b8f46 0%, #1f4111 100%);

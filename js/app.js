@@ -11,6 +11,8 @@ var App = angular.module('App', [
 App.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 		when('/', {templateUrl: 'views/main.html', controller: 'MainCtrl'}).
+		when('/quiz', {templateUrl: 'views/quiz.html', controller: 'QuizCtrl'}).
+		when('/result', {templateUrl: 'views/result.html', controller: 'ResultCtrl'}).
 		when('/admin', {templateUrl: 'views/admin.html', controller: 'AdminCtrl'}).
 		otherwise({redirectTo: '/'});
 }]);

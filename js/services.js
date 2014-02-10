@@ -72,6 +72,23 @@ App.Services.service('QuizStorage', [function() {
 	};
 }]);
 
+App.Services.factory('QuizResult', ['$log', function ($log) {
+	var results = [];
+	return {
+		add : function (v) {
+			results.push(v);
+		},
+		
+		get : function () {
+			return results;
+		},
+		
+		clear : function () {
+			results = [];
+		}
+	};
+}]);
+
 App.Services.service('VersionStorage', [function() {
 	return {
 		load : function () {
