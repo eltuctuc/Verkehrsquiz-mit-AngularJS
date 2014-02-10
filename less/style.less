@@ -8,7 +8,16 @@ and open the template in the editor.
     Author     : Sammy Guergachi <sguergachi at gmail.com>
 */
 body {
-	font-family: Arial, sans-serif
+	margin-top: 2em;
+	font-family: Arial, sans-serif;
+	background-color: rgb(171, 179, 198);
+}
+
+.panel {
+	.panel-body {
+		position: relative;
+		
+	}
 }
 
 .quiz-question {
@@ -18,13 +27,8 @@ body {
 	min-height: 2.8em;
 }
 
-.answer-icon {
-	position: absolute;
-	right: 0; top: 0;
-}
-
-.quiz-button {
-	font-size: 3em;
+.btn-size {
+	font-size: 2em;
 }
 
 .quiz-number {
@@ -33,10 +37,24 @@ body {
 	left: 0.5em;
 }
 
-.min-height {
+/*.min-height {
 	position: relative;
 	height: 25em;
 	overflow: hidden;
+}*/
+
+/*************************************************************************/
+.overlay {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	opacity: 0.7;
+	
+	&.overlayTrue {
+		background: #39ad1f;
+	}
+	&.overlayFalse {
+		background: #ad1f2f;
+	}
 }
 
 /*************************************************************************/
