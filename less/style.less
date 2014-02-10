@@ -1,0 +1,76 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13.01.2014, 15:52:06
+    Author     : Sammy Guergachi <sguergachi at gmail.com>
+*/
+body {
+	margin-top: 2em;
+	font-family: Arial, sans-serif;
+	background-color: rgb(171, 179, 198);
+}
+
+.panel {
+	.panel-body {
+		position: relative;
+		
+	}
+}
+
+.quiz-question {
+	position: relative;
+	text-align: center;
+	font-size: 3em;
+	min-height: 2.8em;
+}
+
+.btn-size {
+	font-size: 2em;
+}
+
+.quiz-number {
+	position: absolute;
+	bottom: 0.5em;
+	left: 0.5em;
+}
+
+/*.min-height {
+	position: relative;
+	height: 25em;
+	overflow: hidden;
+}*/
+
+/*************************************************************************/
+.overlay {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	opacity: 0.7;
+	
+	&.overlayTrue {
+		background: #39ad1f;
+	}
+	&.overlayFalse {
+		background: #ad1f2f;
+	}
+}
+
+/*************************************************************************/
+.panel-danger > .panel-heading {
+	color: white;
+	background-image: -webkit-linear-gradient(top, #A84747 0%, #4E0E0E 100%);
+	background-image: linear-gradient(to bottom, #A84747 0%, #4E0E0E 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A84747', endColorstr='#4E0E0E', GradientType=0);
+}
+
+
+.panel-success > .panel-heading {
+	color: white;
+	background-image: -webkit-linear-gradient(top, #5B8F46 0%, #1F4111 100%);
+	background-image: linear-gradient(to bottom, #5B8F46 0%, #1F4111 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5B8F46', endColorstr='#1F4111', GradientType=0);
+}

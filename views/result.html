@@ -1,0 +1,52 @@
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">
+			<h1>Ergebnis: <span ng-bind="getRightAnswer()"></span> von <span ng-bind="getTotalAnswer()"></span> Fragen richtig</h1>
+		</div>
+		<div class="panel-body">
+			<ul class="list-group">
+				<li ng-repeat="result in results" class="list-group-item {{getColor(result.answer)}}">
+					<div class="media">
+						<span class="col-md-2 pull-left">
+							<img class="media-object img-responsive" ng-src="assets/img/{{result.image}}" ng-show="result.image">
+						</span>
+						<div class="media-body">
+							<h2 class="media-heading">
+								<strong>Frage:</strong> {{result.question}}
+							</h2>
+							<p class="lead" ng-switch on="result.solution">
+								<strong>Richtige Antwort:</strong>
+								<span class="label label-success" ng-switch-when="1">
+									<span class="glyphicon glyphicon-thumbs-up"></span> JA
+								</span>
+								<span class="label label-danger" ng-switch-when="0">
+									<span class="glyphicon glyphicon-thumbs-down"></span> NEIN
+								</span>
+							</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-lg-6">
+					<a class="btn btn-lg btn-block btn-default" role="button" ng-click="gotoMain()">
+						<span class="glyphicon glyphicon-home"></span>
+						Start
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="btn btn-lg btn-block btn-default" role="button" ng-click="gotoQuiz()">
+						<span class="glyphicon glyphicon-ok"></span>
+						Fragequiz
+					</a>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+
+	<div app-output></div>
+</div>
