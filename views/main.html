@@ -1,31 +1,28 @@
 <div>
-	<!--<h1>Quiz zur Verkehrserziehung</h1>-->
-	<!--<ul>
-		<li ng-repeat="entity in quiz">{{entity}}</li>
-	</ul>-->
-	<hr>
 	
-	<div class="panel {{result}}">
-		<div class="panel-heading">
-			<h2 class="lead quiz-question">
-				{{choose.question}}
-			</h2>
+	<div class="panel panel-default">
+		<div class="panel-heading text-center">
+			<h1>Verkehrsquiz</h1>
 		</div>
-		<div class="panel-body min-height">
-			<img src="assets/svg/{{answerSvg}}" width="150" class="answer-icon" ng-show="isAnswer" />
-			<img ng-src="assets/img/{{choose.image}}" ng-show="choose.image" class="center-block"/>
-			<span class="quiz-number">{{choose.uuid}}</span>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-md-3 col-md-offset-2 text-justify">
+					<p>Diese Minianwendung ist im Zuge meiner Bachelor-Arbeit entstanden und soll als Fragenquiz innerhalb eines Verkehrsparcours dienen. Dabei wird an einem Stativ eine Tablet angebracht. So kann der Fragenquiz mobil im Parcour eingesetzt werden.</p>
+					<p>Trotzdem des Einsatzes in einem Verkehrsparcour kann der Quiz auch über das Internet genutzt werden.</p>
+					<hr />
+					<p>Im Quiz gibt es nur Ja-Nein-Fragen. Sie werden in einer zufälligen Reihenfolge angezeigt. Nach dem Beantworten wird kurz angezeigt, ob die Antwort richtig oder falsch war. Dann folgt eine neue Frage.</p>
+					<p>Zum Schluß kommt man zur Auswertung. Dort werden alle Fragen mit ihren richtigen Antworten angezeigt.</p>
+				</div>
+				<div class="col-md-3 col-md-offset-2">
+					<img class="img-responsive" src="assets/Tabletquiz.jpg" alt="" />
+				</div>
+			</div>
 		</div>
 		
 		<div class="panel-footer">
-			<div class="btn-group btn-group-justified">
-				<a class="btn btn-lg btn-info quiz-button" role="button" ng-disabled="isDisabled" ng-click="checkAnswer(false)">Nein</a>
-				<a class="btn btn-lg btn-warning quiz-button" role="button" ng-disabled="isDisabled" ng-click="clickRandom()">Zufall</a>
-				<a class="btn btn-lg btn-info quiz-button" role="button" ng-disabled="isDisabled" ng-click="checkAnswer(true)">Ja</a>
-			</div>
+			<a class="btn btn-lg btn-block btn-default" role="button" ng-click="gotoQuiz()">Weiter zum Quiz</a>
 		</div>
 	
 	</div>
-	<hr>
 	<div app-output></div>
 </div>

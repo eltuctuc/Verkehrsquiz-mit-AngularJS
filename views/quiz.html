@@ -1,31 +1,55 @@
 <div>
-	<!--<h1>Quiz zur Verkehrserziehung</h1>-->
-	<!--<ul>
-		<li ng-repeat="entity in quiz">{{entity}}</li>
-	</ul>-->
-	<hr>
-	
-	<div class="panel {{result}}">
+	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h2 class="lead quiz-question">
+			<h2 class="quiz-question">
+				(<span ng-bind="currentQuestion"></span>/<span ng-bind="totalQuestion"></span>)
 				{{choose.question}}
 			</h2>
 		</div>
 		<div class="panel-body min-height">
-			<img src="assets/svg/{{answerSvg}}" width="150" class="answer-icon" ng-show="isAnswer" />
-			<img ng-src="assets/img/{{choose.image}}" ng-show="choose.image" class="center-block"/>
+			<img ng-src="assets/img/{{choose.image}}" ng-show="choose.image" class="img-responsive center-block"/>
 			<span class="quiz-number">{{choose.uuid}}</span>
 		</div>
 		
 		<div class="panel-footer">
-			<div class="btn-group btn-group-justified">
-				<a class="btn btn-lg btn-info quiz-button" role="button" ng-disabled="isDisabled" ng-click="checkAnswer(false)">Nein</a>
-				<a class="btn btn-lg btn-warning quiz-button" role="button" ng-disabled="isDisabled" ng-click="clickRandom()">Zufall</a>
-				<a class="btn btn-lg btn-info quiz-button" role="button" ng-disabled="isDisabled" ng-click="checkAnswer(true)">Ja</a>
+			<div class="row">
+				<div class="col-lg-6">
+					<a class="btn btn-lg btn-block btn-danger btn-size" role="button" ng-click="checkAnswer(false)">
+						NEIN
+					</a>
+				</div>
+				<div class="col-lg-6">
+					<a class="btn btn-lg btn-block btn-success btn-size" role="button" ng-click="checkAnswer(true)">
+						JA
+					</a>
+				</div>
 			</div>
 		</div>
 	
 	</div>
-	<hr>
+	<div class="row">
+		<div class="col-lg-10">
+			<div class="progress">
+				<div id="questionProgress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{currentQuestion}}" aria-valuemin="0" aria-valuemax="{{totalQuestion}}" style="width: {{percentQuestion}}%;">
+					<span xclass="sr-only">
+						<span ng-bind="currentQuestion"></span> / <span ng-bind="totalQuestion"></span>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-1">
+			<a class="btn btn-block btn-default" role="button" ng-click="gotoStart()">
+				<span class="glyphicon glyphicon-home"></span>
+			</a>
+		</div>
+		<div class="col-lg-1">
+			<a class="btn btn-block btn-default" role="button" ng-click="reload()">
+				<span class="glyphicon glyphicon-refresh"></span>
+			</a>
+		</div>
+	</div>
+	
 	<div app-output></div>
+	
+	<div class="overlay {{overlayColor}}" ng-show="overlayView"></div>
 </div>
