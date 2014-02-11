@@ -7,7 +7,7 @@
 // In this case it is a simple value service.
 App.Services = angular.module('App.Services', []);
 
-App.Services.value('appVersion', '0.0.1');
+App.Services.value('appVersion', '0.0.2');
 
 App.Services.factory('versionControll', ['$log', function($log) {
 	return function(v) {
