@@ -29,6 +29,7 @@ App.Controllers.controller('QuizCtrl', [
 		$scope.currentQuestion = 0;
 		$scope.totalQuestion = 0;
 		$scope.percentQuestion = 0;
+		$scope.list = [];
 		
 		$scope.init = function () {
 			QuizResult.clear();
@@ -42,30 +43,28 @@ App.Controllers.controller('QuizCtrl', [
 			$scope.overlayView = false;
 			$scope.overlayColor = null;
 			
+			for (var i=0; i<20; i++) {
+				var rnd = Math.floor(Math.random() * $scope.quiz.length);
+				
+				$scope.list.push($scope.quiz[rnd]);
+				$scope.quiz.splice(rnd,1);
+			}
+			$scope.totalQuestion =	$scope.list.length;
+			
 			$scope.getChoose();
 		},
 		
 		$scope.getChoose = function () {
-			var rnd = Math.floor(Math.random() * $scope.quiz.length);
+			var rnd = Math.floor(Math.random() * $scope.list.length);
 			
-			$scope.choose = $scope.quiz[rnd];
+			$scope.choose = $scope.list[rnd];
 			
-			$scope.quiz.splice(rnd,1);
-			$scope.currentQuestion = ($scope.totalQuestion) - $scope.quiz.length;
+			$scope.list.splice(rnd,1);
+			$scope.currentQuestion = ($scope.totalQuestion) - $scope.list.length;
 			$scope.percentQuestion = $scope.currentQuestion * 100 / $scope.totalQuestion;
-			$log.log($scope.currentQuestion, $scope.totalQuestion, $scope.quiz.length);
+			$log.log($scope.currentQuestion, $scope.totalQuestion, $scope.list.length);
 			
 			$scope.overlayView = false;
-		};
-		
-		$scope.getTotalAnswer = function () {
-			return $scope.totalQuestion;
-		};
-		
-		$scope.getRightAnswer = function () {
-			var value = 0;
-			
-			return value;
 		};
 		
 		$scope.init();
@@ -85,7 +84,7 @@ App.Controllers.controller('QuizCtrl', [
 			QuizResult.add($scope.choose);
 			
 			$timeout(function () {
-				if($scope.quiz.length === 0) {
+				if($scope.list.length === 0) {
 					$location.path('/result');
 				} else {
 					$scope.getChoose();
@@ -101,8 +100,11 @@ App.Controllers.controller('QuizCtrl', [
 			$location.path('/');
 		};
 		
+		/**
+		 * deprecated
+		 * @returns {undefined}
+		 */
 		$scope.clickRandom = function () {
-			
 			$scope.getChoose();
 		};
 	}

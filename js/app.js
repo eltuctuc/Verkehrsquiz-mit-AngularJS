@@ -34,7 +34,7 @@ App.run([
 			oldVersion = versionControll(oldVersion);
 		}
 		
-		loadJSON.get('quiz.json', function (data) {
+		/*loadJSON.get('quiz.json', function (data) {
 			newVersion = versionControll(data.contentVersion);
 			
 			if (oldVersion) {
@@ -54,7 +54,7 @@ App.run([
 			}
 			
 			var quiz = QuizStorage.load();
-			if (!quiz || loadUpdate) {
+			if (!quiz || loadUpdate) {*/
 				loadJSON.get('quiz.json', function (data) {
 					//$log.log(data);
 					
@@ -64,8 +64,8 @@ App.run([
 					VersionStorage.save(data.contentVersion);
 					$log.log('New data loaded', newVersion);
 				});
-			}
-		});
+			/*}
+		});*/
 
 		$rootScope.rootOutput = false;
 		$rootScope.showOutput = function ( msg ) {
