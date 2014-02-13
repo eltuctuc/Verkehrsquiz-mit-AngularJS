@@ -18,12 +18,12 @@ App.config(['$routeProvider', function($routeProvider) {
 }]);
 
 App.run([
-	'$rootScope', '$log', 'appVersion', 'loadJSON', 'QuizStorage', 'VersionStorage', 'versionControll', 
-	function($rootScope, $log, appVersion, loadJSON, QuizStorage, VersionStorage, versionControll) {
+	'$rootScope', '$log', 'appVersion', 'loadJSON', 'QuizStorage', 'VersionStorage', 'versionControl', 
+	function($rootScope, $log, appVersion, loadJSON, QuizStorage, VersionStorage, versionControl) {
 
-		$log.log('App started');
+		$log.log('App started', angular.version.full);
 
-		var version = versionControll(appVersion);
+		var version = versionControl(appVersion);
 		
 		//$log.log(version);
 		
@@ -31,7 +31,7 @@ App.run([
 				
 		oldVersion = VersionStorage.load();
 		if (oldVersion) {
-			oldVersion = versionControll(oldVersion);
+			oldVersion = versionControl(oldVersion);
 		}
 		
 		/*loadJSON.get('quiz.json', function (data) {
@@ -66,6 +66,8 @@ App.run([
 				});
 			/*}
 		});*/
+		
+		$rootScope.autoplay = false;
 
 		$rootScope.rootOutput = false;
 		$rootScope.showOutput = function ( msg ) {

@@ -29,11 +29,25 @@ body {
 }
 /* line 30, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
 @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000330}}
+.panel-footer {
+  position: relative;
+}
+/* line 33, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000333}}
+.panel-footer .tooltip {
+  position: absolute;
+  top: -1.2em;
+  left: 50%;
+  margin-left: -0.5em;
+  font-size: 5em;
+}
+/* line 42, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000342}}
 .btn-size {
   font-size: 2em;
 }
-/* line 34, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000334}}
+/* line 46, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000346}}
 .quiz-number {
   position: absolute;
   bottom: 0.5em;
@@ -45,8 +59,8 @@ body {
 	overflow: hidden;
 }*/
 /*************************************************************************/
-/* line 47, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000347}}
+/* line 59, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000359}}
 .overlay {
   position: absolute;
   top: 0;
@@ -55,19 +69,19 @@ body {
   left: 0;
   opacity: 0.7;
 }
-/* line 52, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000352}}
+/* line 64, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000364}}
 .overlay.overlayTrue {
   background: #39ad1f;
 }
-/* line 55, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000355}}
+/* line 67, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000367}}
 .overlay.overlayFalse {
   background: #ad1f2f;
 }
 /*************************************************************************/
-/* line 61, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000361}}
+/* line 73, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000373}}
 .panel-danger > .panel-heading {
   color: white;
   background-image: -webkit-linear-gradient(top, #a84747 0%, #4e0e0e 100%);
@@ -75,8 +89,8 @@ body {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#A84747', endColorstr='#4E0E0E', GradientType=0);
 }
-/* line 70, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
-@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000370}}
+/* line 82, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000382}}
 .panel-success > .panel-heading {
   color: white;
   background-image: -webkit-linear-gradient(top, #5b8f46 0%, #1f4111 100%);
