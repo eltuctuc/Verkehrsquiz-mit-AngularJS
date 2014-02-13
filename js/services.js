@@ -7,9 +7,9 @@
 // In this case it is a simple value service.
 App.Services = angular.module('App.Services', []);
 
-App.Services.value('appVersion', '0.0.2');
+App.Services.value('appVersion', '0.1.0');
 
-App.Services.factory('versionControll', ['$log', function($log) {
+App.Services.factory('versionControl', ['$log', function($log) {
 	return function(v) {
 		//$log.log(v);
 		
@@ -29,6 +29,17 @@ App.Services.factory('versionControll', ['$log', function($log) {
 		};
 		
 		return version;
+	};
+}]);
+
+App.Services.factory('autoplayClick', [function () {
+	return function () {
+		var rnd = Math.round(Math.random());
+		if(rnd < 1) {
+			angular.element(document.getElementById('btnAnswerNo')).triggerHandler('click');
+		} else {
+			angular.element(document.getElementById('btnAnswerYes')).triggerHandler('click');
+		}
 	};
 }]);
 

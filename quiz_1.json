@@ -1,7 +1,7 @@
 {
 	"contentVersion" : "0.0.11",
 	"quiz" : [
-		{"uuid" : "32e4a36e" , "question" : "Bedeutet diese Handzeichen freie Fahrt?",                               "solution" : 0, "image" : "32e4a36e.png"},
+		{"uuid" : "32e4a36e" , "question" : "Bedeutet dieses Handzeichen freie Fahrt?",                               "solution" : 0, "image" : "32e4a36e.png"},
 		{"uuid" : "7e4a59cf" , "question" : "Bedeutet dieses Lichtzeichen anhalten?",                                "solution" : 0, "image" : "7e4a59cf.png"},
 		{"uuid" : "7f1ccf18" , "question" : "Darfst du als Fußgänger diese Straße benutzen?",                        "solution" : 0, "image" : "7f1ccf18.png"},
 		{"uuid" : "90e18d7e" , "question" : "Darfst du als Radfahrer hier geradeaus fahren?",                        "solution" : 0, "image" : "90e18d7e.png"},

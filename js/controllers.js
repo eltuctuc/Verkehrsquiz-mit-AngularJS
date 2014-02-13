@@ -6,11 +6,17 @@ App.Controllers = angular.module('App.Controllers', []);
  * MainCtrl
  */
 App.Controllers.controller('MainCtrl', [
-	'$scope', '$log', '$timeout', '$location',
-	function($scope, $log, $timeout, $location) {
+	'$scope', '$log', '$timeout', '$location', '$rootScope',
+	function($scope, $log, $timeout, $location, $rootScope) {
 		$log.log('Main started');
 		
-		$scope.gotoQuiz = function () {
+		$scope.gotoQuiz = function ($event) {
+			//$log.log($event);
+			
+			var e = $event;
+			if(e.altKey && e.ctrlKey && e.shiftKey) {
+				$rootScope.autoplay = true;
+			}
 			$location.path('/quiz');
 		};
 	}
@@ -21,8 +27,8 @@ App.Controllers.controller('MainCtrl', [
  * QuizCtrl
  */
 App.Controllers.controller('QuizCtrl', [
-	'$scope', '$log', '$timeout', '$location', 'QuizStorage', 'QuizResult',
-	function($scope, $log, $timeout, $location, QuizStorage, QuizResult) {
+	'$scope', '$rootScope', '$log', '$timeout', '$location', 'QuizStorage', 'QuizResult', 'autoplayClick',
+	function($scope, $rootScope, $log, $timeout, $location, QuizStorage, QuizResult, autoplayClick) {
 		$log.log('Quiz started');
 		
 		$scope.choose = null;
@@ -39,12 +45,12 @@ App.Controllers.controller('QuizCtrl', [
 			$scope.percentQuestion = 0;
 			
 			$scope.quiz = QuizStorage.load();
-			$scope.totalQuestion =	$scope.quiz.length;
+			$scope.totalQuestion =	$scope.list.length;
 			$scope.overlayView = false;
 			$scope.overlayColor = null;
 			
 			for (var i=0; i<20; i++) {
-				var rnd = Math.floor(Math.random() * $scope.quiz.length);
+				var rnd = Math.floor(Math.random() * $scope.list.length);
 				
 				$scope.list.push($scope.quiz[rnd]);
 				$scope.quiz.splice(rnd,1);
@@ -55,6 +61,7 @@ App.Controllers.controller('QuizCtrl', [
 		},
 		
 		$scope.getChoose = function () {
+			$log.log('getChoose');
 			var rnd = Math.floor(Math.random() * $scope.list.length);
 			
 			$scope.choose = $scope.list[rnd];
@@ -65,12 +72,35 @@ App.Controllers.controller('QuizCtrl', [
 			$log.log($scope.currentQuestion, $scope.totalQuestion, $scope.list.length);
 			
 			$scope.overlayView = false;
+			
+			if($rootScope.autoplay) {
+				$timeout(function () {
+					var rnd = Math.round(Math.random());
+					var  ele = null;
+					if(rnd < 1) {
+						angular.element(document.getElementById('ttAnswerNo')).css('opacity',1);
+						ele = angular.element(document.getElementById('btnAnswerNo'));
+					} else {
+						angular.element(document.getElementById('ttAnswerYes')).css('opacity',1);
+						ele = angular.element(document.getElementById('btnAnswerYes'));
+					};
+					
+					$timeout(function () {
+						if(ele) {
+							ele.triggerHandler('click');
+						}
+						angular.element(document.getElementById('ttAnswerNo')).css('opacity',0);
+						angular.element(document.getElementById('ttAnswerYes')).css('opacity',0);
+					}, 2000);
+				}, 8000);
+			}
 		};
 		
 		$scope.init();
 		
 		
-		$scope.checkAnswer = function (val) {
+		$scope.checkAnswer = function ($event, val) {
+			$log.log('checkAnswer', $event);
 			
 			$scope.overlayView = true;
 			
@@ -115,8 +145,8 @@ App.Controllers.controller('QuizCtrl', [
  * ResultCtrl
  */
 App.Controllers.controller('ResultCtrl', [
-	'$scope', '$log', '$location', 'QuizResult',
-	function($scope, $log, $location, QuizResult) {
+	'$scope', '$rootScope', '$log', '$location', '$timeout', 'QuizResult',
+	function($scope, $rootScope, $log, $location, $timeout, QuizResult) {
 		$log.log('Result started');
 		
 		$scope.results = QuizResult.get();
@@ -156,8 +186,14 @@ App.Controllers.controller('ResultCtrl', [
 		};
 		
 		$scope.gotoQuiz = function () {
-			$location.path('/quiz');
+			
 		};
+			
+		if($rootScope.autoplay) {
+			$timeout(function () {
+				$location.path('/quiz');
+			}, 10000);
+		}
 	}
 ]);
 
