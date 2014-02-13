@@ -98,3 +98,42 @@ body {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5B8F46', endColorstr='#1F4111', GradientType=0);
 }
+/*************************************************************************/
+@media (max-width: 767px) {
+  /* line 92, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000392}}
+  .panel-heading h1 {
+    font-size: 1.5em;
+  }
+  /* line 95, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\0000395}}
+  .media-heading {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 100, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\00003100}}
+  .panel-heading h1 {
+    font-size: 2em;
+  }
+  /* line 103, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\00003103}}
+  .media-heading {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* line 109, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\00003109}}
+  .panel-heading h1 {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 115, D:\Studium\Bachelor Arbeit\HTML\angularjs-verkehrsquiz\less\style.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/D\:\/Studium\/Bachelor Arbeit\/HTML\/angularjs-verkehrsquiz\/less\/style\.less}line{font-family:\00003115}}
+  .panel-heading h1 {
+    font-size: 3em;
+  }
+}

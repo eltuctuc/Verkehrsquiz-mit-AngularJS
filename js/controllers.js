@@ -149,6 +149,16 @@ App.Controllers.controller('ResultCtrl', [
 	function($scope, $rootScope, $log, $location, $timeout, QuizResult) {
 		$log.log('Result started');
 		
+		/*QuizResult.add(
+			{"uuid" : "32e4a36e" , "question" : "Bedeutet dieses Handzeichen freie Fahrt?", "solution" : 0, "image" : "32e4a36e.png", "answer": true}
+		);
+		QuizResult.add(
+			{"uuid" : "7e4a59cf" , "question" : "Bedeutet dieses Lichtzeichen anhalten?", "solution" : 0, "image" : "7e4a59cf.png", "answer": false}
+		);
+		QuizResult.add(
+			{"uuid" : "7f1ccf18" , "question" : "Darfst du als Fußgänger diese Straße benutzen?", "solution" : 0, "image" : "7f1ccf18.png", "answer": true}
+		);*/
+		
 		$scope.results = QuizResult.get();
 		
 		if($scope.results.length === 0) {
