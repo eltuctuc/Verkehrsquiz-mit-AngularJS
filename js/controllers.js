@@ -19,6 +19,13 @@ App.Controllers.controller('MainCtrl', [
 			}
 			$location.path('/quiz');
 		};
+		
+		$scope.gotoAutoplay = function ($event) {
+			$log.log($event);
+			
+			$rootScope.autoplay = true;
+			$location.path('/quiz');
+		};
 	}
 ]);
 
