@@ -7,7 +7,7 @@
 			<ul class="list-group">
 				<li ng-repeat="result in results" class="list-group-item {{getColor(result.answer)}}">
 					<div class="media">
-						<span class="col-md-2 pull-left">
+						<span class="col-xs-3 col-sm-2 pull-left">
 							<img class="media-object img-responsive" ng-src="assets/img/{{result.image}}" ng-show="result.image">
 						</span>
 						<div class="media-body">
@@ -31,13 +31,13 @@
 		
 		<div class="panel-footer">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-xs-6">
 					<a class="btn btn-lg btn-block btn-default" role="button" ng-click="gotoMain()">
 						<span class="glyphicon glyphicon-home"></span>
 						Start
 					</a>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-xs-6">
 					<a class="btn btn-lg btn-block btn-default" role="button" ng-click="gotoQuiz()">
 						<span class="glyphicon glyphicon-ok"></span>
 						Fragequiz

@@ -1,19 +1,19 @@
 <div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h2 class="quiz-question">
+			<h1 class="quiz-question">
 				(<span ng-bind="currentQuestion"></span>/<span ng-bind="totalQuestion"></span>)
 				{{choose.question}}
-			</h2>
+			</h1>
 		</div>
 		<div class="panel-body min-height">
-			<img ng-src="assets/img/{{choose.image}}" ng-show="choose.image" class="img-responsive center-block"/>
+			<img ng-src="assets/img/{{choose.image}}" ng-show="choose.image" class="img-responsive center-block quiz-img"/>
 			<span class="quiz-number">{{choose.uuid}}</span>
 		</div>
 		
 		<div class="panel-footer">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-xs-6 col-sm-6">
 					<div id="ttAnswerNo" class="tooltip">
 						<span class="glyphicon glyphicon-arrow-down"></span>
 					</div>
@@ -21,7 +21,7 @@
 						NEIN
 					</a>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-xs-6 col-sm-6">
 					<div id="ttAnswerYes" class="tooltip">
 						<span class="glyphicon glyphicon-arrow-down"></span>
 					</div>
@@ -34,7 +34,7 @@
 	
 	</div>
 	<div class="row">
-		<div class="col-lg-10">
+		<div class="col-xs-12 col-md-10">
 			<div class="progress">
 				<div id="questionProgress" class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="{{currentQuestion}}" aria-valuemin="0" aria-valuemax="{{totalQuestion}}" style="width: {{percentQuestion}}%;">
 					<span xclass="sr-only">
@@ -43,12 +43,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xs-6 col-md-1">
 			<a class="btn btn-block btn-default" role="button" ng-click="gotoStart()">
 				<span class="glyphicon glyphicon-home"></span>
 			</a>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xs-6 col-md-1">
 			<a class="btn btn-block btn-default" role="button" ng-click="reload()">
 				<span class="glyphicon glyphicon-refresh"></span>
 			</a>
