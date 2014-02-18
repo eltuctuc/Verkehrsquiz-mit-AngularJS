@@ -215,6 +215,18 @@ App.Controllers.controller('ResultCtrl', [
 ]);
 
 /**
+ * DashboardCtrl
+ */
+App.Controllers.controller('DashboardCtrl', [
+	'$scope', '$log','$rootScope',
+	function($scope, $log, $rootScope) {
+		$log.log('dashboard Ctrl');
+		
+		$scope.isDashboard = true;
+	}
+]);
+
+/**
  * AdminCtrl
  */
 App.Controllers.controller('AdminCtrl', [

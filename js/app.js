@@ -14,6 +14,7 @@ App.config(['$routeProvider', function($routeProvider) {
 		when('/quiz', {templateUrl: 'views/quiz.html', controller: 'QuizCtrl'}).
 		when('/result', {templateUrl: 'views/result.html', controller: 'ResultCtrl'}).
 		when('/admin', {templateUrl: 'views/admin.html', controller: 'AdminCtrl'}).
+		when('/dashboard', {templateUrl: 'views/dashboard.html', controller: 'DashboardCtrl'}).
 		otherwise({redirectTo: '/'});
 }]);
 

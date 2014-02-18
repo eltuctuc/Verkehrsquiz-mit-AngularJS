@@ -1,0 +1,61 @@
+<div>
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Dashboard</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Fragenverwaltung</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Klassenverwaltung</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-off"></span> Zurück</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<div class="row" ng-show="isDashboard">
+				<div class="col-sm-6">
+					<h2><span class="glyphicon glyphicon-user"></span> Klassenübersicht</h2>
+					<ul class="list-group">
+						<li class="list-group-item"><span class="badge">14</span>Klasse 4a</li>
+						<li class="list-group-item"><span class="badge">12</span>Klasse 4b</li>
+						<li class="list-group-item"><span class="badge">8</span>Klasse 3a</li>
+						<li class="list-group-item"><span class="badge">9</span>Klasse 3b</li>
+						<li class="list-group-item"><span class="badge">9</span>Klasse 3c</li>
+						<li class="list-group-item"><span class="badge">15</span>Klasse 2a</li>
+						<li class="list-group-item"><span class="badge">14</span>Klasse 2b</li>
+						<li class="list-group-item"><span class="badge">12</span>Klasse 1a</li>
+					</ul>
+				</div>
+				<div class="col-sm-6">
+					<h2><span class="glyphicon glyphicon-question-sign"></span> Fragenübersicht</h2>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Neue Frage</button>
+						<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span>Neuer Quiz</button>
+					</div>
+					<hr />
+					<ul class="list-group">
+						<li class="list-group-item"><span class="badge">21</span>Quiz 1</li>
+						<li class="list-group-item"><span class="badge">13</span>Schulquiz</li>
+						<li class="list-group-item"><span class="badge">72</span>Tag der offenen Tür</li>
+						<li class="list-group-item"><span class="badge">15</span>Klasse 3</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div app-output></div>
+</div>
