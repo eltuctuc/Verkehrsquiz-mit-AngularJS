@@ -4,7 +4,9 @@
   "description": "Verkehrsquiz mit AngularJS ============",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jshint **.js",
+    "build": "browserify index.js > myproject.min.js",
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,8 @@
   },
   "homepage": "https://github.com/eltuctuc/angularjs-verkehrsquiz#readme",
   "devDependencies": {
-    "bower": "^1.4.1"
+    "bower": "latest",
+    "browserify": "latest",
+    "jshint": "latest"
   }
 }
