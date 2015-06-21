@@ -1,0 +1,16 @@
+{
+  "name": "angularjs-verkehrsquiz",
+  "version": "1.0.0",
+  "homepage": "https://github.com/eltuctuc/angularjs-verkehrsquiz",
+  "authors": [
+    "Enrico Reinsdorf <enrico.reinsdorf@re-design.de>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
